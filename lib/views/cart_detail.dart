@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food/views/resto_detail.dart';
 import 'package:food/widgets/button.dart';
 import 'package:from_css_color/from_css_color.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -294,7 +295,9 @@ class CartDetail extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-            child: CustomButton(textButton: "Pay", onPressed: (){}),
+            child: CustomButton(textButton: "Pay", onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => RestoDetail()));
+            }),
           )
         ],
       ),
