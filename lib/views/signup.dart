@@ -10,18 +10,25 @@ class SignupPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          Container(
-            width: 500,
-            height: 300,
-            decoration: BoxDecoration(
-              image: DecorationImage(image: AssetImage("assets/images/orang_buang.png") )
+      body: Padding(
+        padding: EdgeInsetsGeometry.symmetric(horizontal: 30, vertical: 60),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Center(
+              child: Container(
+                width: 400,
+                height: 200,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage("assets/images/orang_buang.png"),
+                    
+                  ),
+                ),
+              ),
             ),
-          ),
-          SizedBox(height: 30,),
-          Center(
+            SizedBox(height: 50),
+            Center(
               child: Text(
                 "Register",
                 style: GoogleFonts.poppins(
@@ -30,65 +37,52 @@ class SignupPage extends StatelessWidget {
                 ),
               ),
             ),
-          
-          
-          Container(
-            height: 500,
-            width: 500,
-            decoration: BoxDecoration(
-              color: fromCssColor("#FBFBFB"),
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 70),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Form(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        labelText: "Email",
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
+            SizedBox(height: 30,),
+            Column(
+              children: [
+                Form(
+                  child: TextField(
+                    decoration: InputDecoration(
+                      labelText: "Email",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
                       ),
                     ),
-                  ),
-                  SizedBox(height: 20),
-                  Form(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        labelText: "Password",
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        suffix: Icon(Icons.remove_red_eye),
+                  ), 
+                ),
+            SizedBox(height: 20,),
+                Form(
+                  child: TextField(
+                    decoration: InputDecoration(
+                      labelText: "Password",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
                       ),
+                      suffix: Icon(Icons.remove_red_eye),
                     ),
                   ),
+                ),
 
-                  SizedBox(height: 20),
-                  Form(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        labelText: "Confirm Password",
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        suffix: Icon(Icons.remove_red_eye),
+            SizedBox(height: 20,),
+                Form(
+                  child: TextField(
+                    decoration: InputDecoration(
+                      labelText: "Confirm Password",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
                       ),
+                      suffix: Icon(Icons.remove_red_eye),
                     ),
                   ),
-                  Spacer(),
-                  CustomButton(textButton: "Sign Up", onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
-                  })
-                ],
-              ),
+                ),
+              ],
             ),
-          ),
-        ],
+            Spacer(),
+            CustomButton(textButton: "Sign up", onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
+            }),
+          ],
+        ),
       ),
     );
   }

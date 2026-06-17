@@ -17,12 +17,12 @@ class LoginPage extends StatelessWidget {
           children: [
             Center(
               child: Container(
-                width: 420,
-                height: 420,
+                width: 400,
+                height: 200,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage("assets/images/orang_duduk.png"),
-                    fit: BoxFit.cover,
+                    
                   ),
                 ),
               ),

@@ -16,8 +16,8 @@ class SplashPage extends StatelessWidget {
         children: [
           Center(
             child: Container(
-              width: 600,
-              height: 600,
+              width: 400,
+              height: 400,
               decoration: BoxDecoration(
                 image: DecorationImage(image: AssetImage("assets/images/Illustration.png"),
                 fit: BoxFit.cover)

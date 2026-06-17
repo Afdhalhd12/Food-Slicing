@@ -125,7 +125,7 @@ class Boardingpage extends StatelessWidget {
                 title: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 20,),
+                    SizedBox(height: 20),
                     Text(
                       "Popular",
                       style: GoogleFonts.poppins(fontWeight: FontWeight.bold),
@@ -143,67 +143,89 @@ class Boardingpage extends StatelessWidget {
                 trailing: Icon(Icons.arrow_forward),
               ),
               SizedBox(height: 20),
-              ListView.separated(
+
+              // ListView.separated(
+              //   shrinkWrap: true,
+              //   itemCount: 4,
+              //   separatorBuilder: (context, index) {
+              //     return SizedBox(height: 20);
+              //   },
+              //   itemBuilder: (context, index) {
+              //     return Column(children: [Restaurant()]);
+              //   },
+              // ),
+
+              // GridView.count(
+              //   shrinkWrap: true,
+              //   physics: NeverScrollableScrollPhysics(),
+              //   crossAxisCount: 2,
+              //   crossAxisSpacing: 2,
+              //   children: List.generate(2, (index) {
+              //     return Restaurant();
+              //   }),
+              // ),
+              GridView.count(
                 shrinkWrap: true,
-                itemCount: 4,
-                separatorBuilder: (context, index) {
-                  return SizedBox(height: 20);
-                },
-                itemBuilder: (context, index) {
-                  return Column(children: [Restaurant()]);
-                },
+                physics: NeverScrollableScrollPhysics(),
+                crossAxisCount: 2,
+                crossAxisSpacing: 20,
+                mainAxisSpacing: 20,
+                children: List.generate(4, (index) {
+                  return Restaurant();
+                }),
               ),
             ],
           ),
         ),
       ),
-      // bottomNavigationBar: Padding(
-      //   padding: EdgeInsetsGeometry.symmetric(horizontal: 30, vertical: 10),
-      //   child: Container(
-      //     height: 70,
-      //     padding: EdgeInsets.all(5),
-      //     decoration: BoxDecoration(
-      //       color: Colors.white,
-      //       borderRadius: BorderRadius.circular(20),
-      //       boxShadow: [
-      //         BoxShadow(
-      //           color: const Color.fromARGB(
-      //             255,
-      //             203,
-      //             201,
-      //             201,
-      //           ).withValues(alpha: 0.3),
-      //           spreadRadius: 1,
-      //           blurRadius: 10,
-      //           offset: Offset(0, 2),
-      //         ),
-      //       ],
-      //     ),
-      //     child: ClipRRect(
-      //       child: BottomNavigationBar(
-      //         elevation: 0,
-      //         iconSize: 25,
-      //         backgroundColor: Colors.transparent,
-      //         showSelectedLabels: true,
-      //         showUnselectedLabels: true,
-      //         selectedItemColor: Colors.blue,
-      //         type: BottomNavigationBarType.fixed,
 
-      //         items: [
-      //           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-      //           BottomNavigationBarItem(
-      //             icon: Icon(Icons.document_scanner),
-      //             label: "Detail",
-      //           ),
-      //           BottomNavigationBarItem(
-      //             icon: Icon(Icons.person),
-      //             label: "user",
-      //           ),
-      //         ],
-      //       ),
-      //     ),
-      //   ),
-      // ),
+      bottomNavigationBar: Padding(
+        padding: EdgeInsetsGeometry.symmetric(horizontal: 30, vertical: 10),
+        child: Container(
+          height: 70,
+          padding: EdgeInsets.all(5),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: [
+              BoxShadow(
+                color: const Color.fromARGB(
+                  255,
+                  203,
+                  201,
+                  201,
+                ).withValues(alpha: 0.3),
+                spreadRadius: 1,
+                blurRadius: 10,
+                offset: Offset(0, 2),
+              ),
+            ],
+          ),
+          child: ClipRRect(
+            child: BottomNavigationBar(
+              elevation: 0,
+              iconSize: 25,
+              backgroundColor: Colors.transparent,
+              showSelectedLabels: true,
+              showUnselectedLabels: true,
+              selectedItemColor: Colors.blue,
+              type: BottomNavigationBarType.fixed,
+
+              items: [
+                BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.document_scanner),
+                  label: "Detail",
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.person),
+                  label: "user",
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
